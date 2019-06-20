@@ -8,16 +8,22 @@ interface FavoriteRepository {
     fun addFavorite(movie: Movie)
     fun removeFavorite(movie: Movie)
     fun allFavorites(): Movies?
+    fun isMovieFavorite(movie: Movie) : Boolean
 }
 
 class FavoriteRepositoryImpl : FavoriteRepository {
+    override fun isMovieFavorite(movie: Movie): Boolean {
+        val movies = allFavorites()
+        return movies?.list?.contains(movie) ?: false
+    }
+
     override fun allFavorites(): Movies? {
         return prefs.favorites
     }
 
     override fun addFavorite(movie: Movie) {
         val movies = allFavorites() ?: Movies(arrayListOf())
-        movies.list.add(movie)
+        movies.list += movie
         prefs.favorites = movies
     }
 

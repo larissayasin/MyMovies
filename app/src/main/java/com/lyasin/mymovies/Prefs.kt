@@ -14,7 +14,11 @@ class Prefs(context: Context) {
     var favorites: Movies?
         get() {
             val moshi = Moshi.Builder().build()
-            return moshi.adapter(Movies::class.java).fromJson(prefs.getString(FAVORITES, ""))
+            return if (prefs.getString(FAVORITES, "").isNullOrEmpty()){
+                Movies(arrayListOf())
+            }else {
+                moshi.adapter(Movies::class.java).fromJson(prefs.getString(FAVORITES, ""))
+            }
         }
         set(value) {
             val moshi = Moshi.Builder().build()

@@ -14,7 +14,8 @@ class FavoriteMovieViewModel (private val movieRepository: FavoriteRepository ):
         movieRepository.removeFavorite(movie)
     }
 
-    fun all(){
-        movieRepository.allFavorites()
-    }
+    fun all() = movieRepository.allFavorites()
+
+    fun isMovieFavorite(movie: Movie) = movieRepository.isMovieFavorite(movie)
+
 }
