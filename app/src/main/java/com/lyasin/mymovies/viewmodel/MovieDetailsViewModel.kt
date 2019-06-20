@@ -4,13 +4,13 @@ import androidx.lifecycle.ViewModel
 import com.lyasin.mymovies.model.Movie
 import com.lyasin.mymovies.repository.FavoriteRepository
 
-class FavoriteMovieViewModel (private val movieRepository: FavoriteRepository ): ViewModel(){
+class FavoriteMovieViewModel(private val movieRepository: FavoriteRepository) : ViewModel() {
 
-    fun addFavorite(movie : Movie){
+    fun addFavorite(movie: Movie) {
         movieRepository.addFavorite(movie)
     }
 
-    fun removeFavorite(movie : Movie){
+    fun removeFavorite(movie: Movie) {
         movieRepository.removeFavorite(movie)
     }
 

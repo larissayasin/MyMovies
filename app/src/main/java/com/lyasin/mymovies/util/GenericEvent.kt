@@ -1,6 +1,4 @@
 package com.lyasin.mymovies.util
 
-open class AbstractEvent<T>(
-        val isLoading: Boolean = false,
-        val error: Throwable? = null,
-        val data: T? = null)
+open class ErrorEvent(
+    val error: Throwable? = null)

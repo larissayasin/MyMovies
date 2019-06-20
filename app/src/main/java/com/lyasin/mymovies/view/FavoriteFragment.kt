@@ -16,19 +16,19 @@ class FavoriteFragment : Fragment() {
 
 
     private lateinit var v: View
-    private val vm : FavoriteMovieViewModel by viewModel()
+    private val vm: FavoriteMovieViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.fragment_list, container, false)
-        return  v
+        return v
     }
 
     override fun onResume() {
         super.onResume()
         v.rv_list.layoutManager = LinearLayoutManager(context)
-        v.rv_list.adapter = FavoriteAdapter(vm.all()?.list  ?: listOf())
+        v.rv_list.adapter = FavoriteAdapter(vm.all()?.list ?: listOf())
     }
 }

@@ -9,7 +9,7 @@ import com.squareup.moshi.Moshi
 class Prefs(context: Context) {
     private val PREFS_FILENAME = "com.lyasin.mymovies.prefs"
     private val FAVORITES = "favorites"
-    private val prefs: SharedPreferences = context.getSharedPreferences(PREFS_FILENAME, 0);
+    private val prefs: SharedPreferences = context.getSharedPreferences(PREFS_FILENAME, 0)
 
     var favorites: Movies?
         get() {

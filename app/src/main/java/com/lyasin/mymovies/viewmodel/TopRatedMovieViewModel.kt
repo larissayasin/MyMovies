@@ -6,16 +6,16 @@ import androidx.lifecycle.ViewModel
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.lyasin.mymovies.model.Movie
-import com.lyasin.mymovies.repository.PopularMoviesKeyedDataSource
-import com.lyasin.mymovies.repository.PopularMoviesKeyedDataSourceFactory
-import com.lyasin.mymovies.util.AbstractEvent
+import com.lyasin.mymovies.repository.TopRatedMoviesKeyedDataSource
+import com.lyasin.mymovies.repository.TopRatedMoviesKeyedDataSourceFactory
+import com.lyasin.mymovies.util.ErrorEvent
 
-class TopRatedMovieViewModel ( factory: PopularMoviesKeyedDataSourceFactory ): ViewModel(){
-    var networkStateLiveData: LiveData<AbstractEvent<Void>>? = null
+class TopRatedMovieViewModel ( factory: TopRatedMoviesKeyedDataSourceFactory ): ViewModel(){
+    var networkStateLiveData: LiveData<ErrorEvent>? = null
 
     var movieList: LiveData<PagedList<Movie>>
 
-    private var liveDataSource: LiveData<PopularMoviesKeyedDataSource> = factory.getItemLiveDataSource()
+    private var liveDataSource: LiveData<TopRatedMoviesKeyedDataSource> = factory.getItemLiveDataSource()
 
     init {
         networkStateLiveData = Transformations.switchMap(

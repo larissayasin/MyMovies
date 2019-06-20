@@ -18,7 +18,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class TopRatedFragment : Fragment() {
 
-    private val vm : TopRatedMovieViewModel by viewModel()
+    private val vm: TopRatedMovieViewModel by viewModel()
     private val adapter = MoviePagedAdapter()
 
     override fun onCreateView(
@@ -32,8 +32,8 @@ class TopRatedFragment : Fragment() {
         observeMovieList()
 
         vm.networkStateLiveData?.observe(this, Observer { network ->
-            when{
-                network.error != null ->  {
+            when {
+                network.error != null -> {
                     Toast.makeText(context, getString(R.string.error_msg), Toast.LENGTH_SHORT).show()
                 }
             }
@@ -43,7 +43,7 @@ class TopRatedFragment : Fragment() {
     }
 
 
-    private fun observeMovieList(){
+    private fun observeMovieList() {
         vm.movieList.observe(this,
             Observer<PagedList<Movie>> { items ->
                 adapter.submitList(items)

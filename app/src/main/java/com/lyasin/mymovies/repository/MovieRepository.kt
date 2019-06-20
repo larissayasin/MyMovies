@@ -16,6 +16,6 @@ class MovieRepositoryImpl(private val api : MovieApi): MovieRepository {
     }
 
     override fun topRated(page: Int): Observable<Movies> {
-        return api.popular( ApiConfig.API_KEY, page)
+        return api.topRated( ApiConfig.API_KEY, page)
     }
 }

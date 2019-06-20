@@ -13,7 +13,7 @@ class MoviePagedAdapter : PagedListAdapter<Movie, MovieViewHolder>(DiffUtilCallB
         return MovieViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder:MovieViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         getItem(position)?.let { holder.bind(it) }
     }
 }

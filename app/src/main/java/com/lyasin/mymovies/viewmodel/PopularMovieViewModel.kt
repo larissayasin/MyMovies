@@ -8,10 +8,10 @@ import androidx.paging.PagedList
 import com.lyasin.mymovies.model.Movie
 import com.lyasin.mymovies.repository.PopularMoviesKeyedDataSource
 import com.lyasin.mymovies.repository.PopularMoviesKeyedDataSourceFactory
-import com.lyasin.mymovies.util.AbstractEvent
+import com.lyasin.mymovies.util.ErrorEvent
 
-class PopularMovieViewModel (factory: PopularMoviesKeyedDataSourceFactory ): ViewModel(){
-    var networkStateLiveData: LiveData<AbstractEvent<Void>>? = null
+class PopularMovieViewModel(factory: PopularMoviesKeyedDataSourceFactory) : ViewModel() {
+    var networkStateLiveData: LiveData<ErrorEvent>? = null
 
     var movieList: LiveData<PagedList<Movie>>
 

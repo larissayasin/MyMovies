@@ -36,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
             }
             true
         }
-        fm.beginTransaction().add(R.id.main_frame, fragFavorite, "3").hide(fragFavorite).commit();
+        fm.beginTransaction().add(R.id.main_frame, fragFavorite, "3").hide(fragFavorite).commit()
         fm.beginTransaction().add(R.id.main_frame, fragTopRated, "2").hide(fragTopRated).commit()
         fm.beginTransaction().add(R.id.main_frame, fragPopular, "1").commit()
     }
