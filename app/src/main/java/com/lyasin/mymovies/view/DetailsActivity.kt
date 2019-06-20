@@ -23,6 +23,8 @@ class DetailsActivity : AppCompatActivity() {
         val moshi = Moshi.Builder().build()
         movie = moshi.adapter(Movie::class.java).fromJson(intent.getStringExtra("movie"))
 
+        supportActionBar?.title = movie.title
+        
         tv_details_title.text = movie.title
         tv_details_overview.text = movie.overview
         Glide.with(this).load(movie.posterPath?.buildPosterUrl()).into(iv_details_poster)
